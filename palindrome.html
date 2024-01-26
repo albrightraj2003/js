@@ -1,0 +1,29 @@
+<body>
+    <h1>Palindrome</h1>
+    <p id="out"></p>
+
+    <script>
+        var out = document.getElementById("out");
+        var n;
+        n = parseInt(prompt("For finding palindrome\n\nPlease enter your number"));
+
+        function palindrome(n) {
+            var original = n;
+            var rev = 0;
+            
+            while (n != 0) {
+                var digit = n % 10;
+                rev = rev * 10 + digit;
+                n = Math.floor(n / 10);
+            }
+
+            if (original == rev) {
+                out.innerHTML = `${original} is palindrome.`;
+            } else {
+                out.innerHTML = `${original} is not palindrome.<br>Reverse number is ${rev}`;
+            }
+        }
+        
+        palindrome(n);
+    </script>
+</body>

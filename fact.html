@@ -1,0 +1,19 @@
+<body>
+    <h1>Factorial</h1>  
+   <p id="out"></p>
+</body>
+<script>
+    var out=document.getElementById("out");
+    var n;
+    n=parseInt(prompt("For finding factorial\n\nPlease enter your number"));
+    function fact(n){
+        if(n===1){
+            return n;
+        }
+        else{
+            return n*fact(n-1);
+        }
+    }
+    var output =fact(n);
+    out.innerHTML=`The factorial of ${n} is ${output}`;
+</script>

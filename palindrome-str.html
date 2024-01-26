@@ -1,0 +1,26 @@
+<title>Palindrome_strings</title>
+<body>
+    <h1>Palindrome_string</h1>
+    <p id="out"></p>
+
+    <script>
+        var out = document.getElementById("out");
+        inputString = prompt("For finding palindrome-string\n\nEnter any words strings");
+        function isPalindrome(str) {
+    for (let i = 0; i < Math.floor(str.length-1); i++) {
+        if (str[i] !== str[str.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
+const result = isPalindrome(inputString);
+
+
+if (result) {
+    out.innerHTML=`${inputString} is a palindrome.`;
+} else {
+    out.innerHTML=`${inputString} is not a palindrome.`;
+}
+    </script>
+</body>
