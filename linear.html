@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search</title>
+    <script>
+        var element = []; // Declare the element array globally
+
+        function valueget() {
+            var inp = document.getElementById("inp");
+            element = []; // Reset the global element array
+            var r = parseInt(document.getElementById("range").value);
+
+            for (var i = 0; i < r; i++) {
+                element[i] = prompt(`Enter element ${i + 1}:`);
+            }
+            inp.innerHTML = element;
+        }
+
+        function linearSearch() {
+            var count = 0;
+            var num = parseInt(document.getElementById("searchElement").value);
+
+            for (var i = 0; i < element.length; i++) {
+                if (element[i] == num) {
+                    count++;
+                    alert(`Element found at position ${i + 1}`);
+                    break;
+                }
+            }
+
+            if (count == 0) {
+                alert("Element not found");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Linear Search</h2>
+    <label for="range">Enter the range of elements:</label>
+    <input type="number" id="range" min="1" required>
+    <br>
+    <button onclick="valueget()">Generate Array</button>
+    <br>
+    <p id="inp"></p>
+    <br>
+    <label for="searchElement">Enter the element to find:</label>
+    <input type="number" id="searchElement" required>
+    <br>
+    <button onclick="linearSearch()">Search</button>
+</body>
+</html>
